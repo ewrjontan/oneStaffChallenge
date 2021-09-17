@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <title>OneStaffChallenge</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <!-- build:css css/main.css -->
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+        <!--<link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css"/>-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/stylesheet.css"/>
+        <!-- endbuild -->
+    </head>
+
+    <body>
+
+        <div class="text-center my-5">
+            <h1>employee incident report</h1>
+            <h4>injury/illness</h4>
+
+            <div class="my-5 px-2">
+                <p><strong>Instructions: </strong> Employees shall use this form to report work-related injuries or illnesses which could have caused an injury or illness - no matter how minor.</p>
+
+                <p><strong>Timing: </strong> Employee completes the form during their work-shift (or within 24-hours of incident).</p>
+            </div>
+        </div>
+
+        <div>
+            <form class="text-center">
+                <h6>I am reporting a work related: </h6>
+                <div class="row col-12 mx-auto d-flex justify-content-center">
+                    <div class="col-3">
+                        <input type='radio' id='injury' name='incident-type' value='injury'>
+                        <label for='injury'>injury</label>
+                    </div>
+
+                    <div class="col-3">
+                        <input type='radio' id='illness' name='incident-type' value='illness'>
+                        <label for='illness'>illness</label>
+                    </div>
+                </div>
+
+                <div class="row col-10 mx-auto my-3">
+                    <label for="firstname">first name:</label><br>
+                    <input type="text" id="firstname" name="firstname"><br>
+                </div>
+
+                <div class="row col-10 mx-auto mb-3">
+                    <label for="lastname">last name:</label><br>
+                    <input type="text" id="lastname" name="lastname">
+                </div>
+
+                <div class="row col-10 mx-auto mb-3">
+                    <label for="jobTitle">job title:</label><br>
+                    <input type="text" id="jobTitle" name="jobTitle"><br>
+                </div>
+
+                <div class="row col-10 mx-auto mb-3">
+                    <label for="supervisor">supervisor @ facility name:</label><br>
+                    <input type="text" id="supervisor" name="supervisor">
+                </div>
+
+                <div class="row col-10 mx-auto mb-3">
+                    <label for="whoDidYourReportTo">who did you report it to?</label><br>
+                    <input type="text" id="whoDidYourReportTo" name="whoDidYourReportTo"><br>
+                </div>
+
+                <div class="row col-10 mx-auto mb-3">
+                    <label for="incidentDate">date of incident</label><br>
+                    <input type="date" id="incidentDate" name="incidentDate" value="2021-07-22" min="2020-01-01" max="2050-12-31">
+                </div>
+
+                <div class="row col-10 mx-auto mb-3">
+                    <label for="incidentTime">time of incident</label><br>
+                    <input type="time" id="incidentTime" name="incidentTime" min="00:00" max="12:00" required>                
+                </div>
+
+                <div class="row col-10 mx-auto mb-3">
+                    <label for="shiftStartTime">time you started shift</label><br>
+                    <input type="time" id="shiftStartTime" name="shiftStartTime" min="00:00" max="12:00" required>                
+                </div>
+
+                <div class="row col-10 mx-auto mb-3">
+                    <label for="witnesses">name of witnesses (if any)?</label><br>
+                    <input type="text" id="witnesses" name="witnesses"><br>
+                </div>
+
+
+
+
+            </form>
+        </div>
+
+
+
+
+
+
+
+        <!--<script src="node_modules/jquery/dist/jquery.js"></script>
+        <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>-->
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="javascript.js"></script>
+
+    </body>
+
+
+
+
+</html>

@@ -1,0 +1,15 @@
+@font-face{ 
+    font-family: 'FagoCo-Black';
+    src: url('../fonts/FagoCo-Black_16729.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1 {
+    font-family: 'FagoCo-Black'
+}
+
+h4, p, label {
+    font-family: 'Open Sans', sans-serif;
+}
+
