@@ -5,11 +5,32 @@
     font-style: normal;
 }
 
+html, body{
+    color: #262626;
+}
+
+.instructions-container{
+    background-color:#4fc1b1;
+}
+
 h1 {
-    font-family: 'FagoCo-Black'
+    font-family: 'FagoCo-Black';
+
 }
 
 h4, p, label {
     font-family: 'Open Sans', sans-serif;
 }
 
+form label {
+    font-weight:bold;
+}
+
+.radio-label{
+    font-weight:normal;
+}
+
+form .btn {
+    background-color: #4fc1b1;
+    color: white
+}
