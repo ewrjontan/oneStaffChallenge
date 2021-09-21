@@ -17,24 +17,35 @@
     </head>
 
     <body>
+        <header class="jumbotron jumbotron-fluid">
+            <div class="container-fluid">
+                <div class="row d-flex justify-content-around">
+                    <div class="col-12 col-sm-6 col-xl-3 align-self-center">
+                        <a href="index.html">
+                            <img src="images/logo.png" class="img-fluid"/>
+                        </a>   
+                    </div>
+                    <div class="col-12 col-sm-6 col-xl-3 my-5 text-center">
+                        <h1>employee incident report</h1>
+                        <h4>injury/illness</h4>
+                    </div>
+                </div>
 
-        <div class="text-center my-5 py-5 instructions-container">
-            <h1>employee incident report</h1>
-            <h4>injury/illness</h4>
-
-            <div class="mt-5 px-2">
-                <p><strong>instructions: </strong> Employees shall use this form to report work-related injuries or illnesses which could have caused an injury or illness - no matter how minor.</p>
-
-                <p><strong>timing: </strong> Employee completes the form during their work-shift (or within 24-hours of incident).</p>
+                <div class="row instructions-container pt-3 text-center">
+                    <p><strong>instructions: </strong> Employees shall use this form to report work-related injuries or illnesses which could have caused an injury or illness - no matter how minor.</p>
+    
+                    <p><strong>timing: </strong> Employee completes the form during their work-shift (or within 24-hours of incident).</p>
+                </div>
             </div>
-        </div>
+        </header>
 
-        <div class="mb-5">
-            <form class="text-center">
-                <label for="incident-type">I am reporting a work related: </label>
-                <div class="row col-12 mx-auto d-flex justify-content-center">
+        <div class="my-5">
+            <form class="text-center mx-auto py-5 col-12 col-md-8 col-lg-8">
+                <div class="row col-12 col-md-9 col-lg-5 mx-auto d-flex justify-content-center mb-4">
+                    <label class="mb-3" for="incident-type">I am reporting a work related: </label>
+
                     <div class="col-3">
-                        <input type='radio' id='injury' name='incident-type' value='injury'>
+                        <input type='radio' id='injury' name='incident-type' value='injury' required>
                         <label class="radio-label" for='injury'>injury</label>
                     </div>
 
@@ -44,75 +55,84 @@
                     </div>
                 </div>
 
-                <div class="row col-10 mx-auto my-3">
-                    <label for="firstname">first name:</label><br>
-                    <input type="text" id="firstname" name="firstname" required><br>
+                <!--<div class="row col-10 col-lg-4 mx-auto my-3">
+                    <label class="col-12 col-sm-4 mx-auto" for="name">your name:</label><br/>
+                    <input class="col-12 col-sm-8 mx-auto" type="text" id="name" name="name" required>
+                </div>-->
+
+                <div class="row col-lg-8 mx-auto">
+                    <div class="row col-11 col-lg-6 mx-auto mb-4">
+                        <label for="name">your name:</label><br/>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="row col-11 col-lg-6 mx-auto mb-4">
+                        <label for="jobTitle">job title:</label><br>
+                        <input type="text" id="jobTitle" name="jobTitle" required><br>
+                    </div>
                 </div>
 
-                <div class="row col-10 mx-auto mb-3">
-                    <label for="lastname">last name:</label><br>
-                    <input type="text" id="lastname" name="lastname" required>
+                <div class="row col-lg-8 mx-auto">
+                    <div class="row col-11 col-lg-6 mx-auto mb-4">
+                        <label for="supervisor">supervisor @ facility name:</label><br>
+                        <input type="text" id="supervisor" name="supervisor" required>
+                    </div>
+
+                    <div class="row col-11 col-lg-6 mx-auto mb-4">
+                        <label for="whoDidYourReportTo">who did you report it to?</label><br>
+                        <input type="text" id="whoDidYourReportTo" name="whoDidYourReportTo" required><br>
+                    </div>
                 </div>
 
-                <div class="row col-10 mx-auto mb-3">
-                    <label for="jobTitle">job title:</label><br>
-                    <input type="text" id="jobTitle" name="jobTitle" required><br>
+                <div class="row col-lg-8 mx-auto">
+                    <div class="row col-11 col-lg-6 mx-auto mb-4">
+                        <label for="incidentDate">date of incident</label><br>
+                        <input type="date" id="incidentDate" name="incidentDate" value="2021-07-22" min="2020-01-01" max="2050-12-31" required>
+                    </div>
+    
+                    <div class="row col-11 col-lg-6 mx-auto mb-4">
+                        <label for="incidentTime">time of incident</label><br>
+                        <input type="time" id="incidentTime" name="incidentTime" min="00:00" max="12:00" required>                
+                    </div>
                 </div>
-
-                <div class="row col-10 mx-auto mb-3">
-                    <label for="supervisor">supervisor @ facility name:</label><br>
-                    <input type="text" id="supervisor" name="supervisor" required>
+                
+                <div class="row col-lg-8 mx-auto">
+                    <div class="row col-11 col-lg-6 mx-auto mb-4">
+                        <label for="shiftStartTime">time you started shift</label><br>
+                        <input type="time" id="shiftStartTime" name="shiftStartTime" min="00:00" max="12:00" required>                
+                    </div>
+    
+                    <div class="row col-11 col-lg-6 mx-auto mb-4">
+                        <label for="witnesses">name of witnesses (if any)?</label><br>
+                        <input type="text" id="witnesses" name="witnesses" required><br>
+                    </div>
                 </div>
+                
 
-                <div class="row col-10 mx-auto mb-3">
-                    <label for="whoDidYourReportTo">who did you report it to?</label><br>
-                    <input type="text" id="whoDidYourReportTo" name="whoDidYourReportTo" required><br>
-                </div>
-
-                <div class="row col-10 mx-auto mb-3">
-                    <label for="incidentDate">date of incident</label><br>
-                    <input type="date" id="incidentDate" name="incidentDate" value="2021-07-22" min="2020-01-01" max="2050-12-31" required>
-                </div>
-
-                <div class="row col-10 mx-auto mb-3">
-                    <label for="incidentTime">time of incident</label><br>
-                    <input type="time" id="incidentTime" name="incidentTime" min="00:00" max="12:00" required>                
-                </div>
-
-                <div class="row col-10 mx-auto mb-3">
-                    <label for="shiftStartTime">time you started shift</label><br>
-                    <input type="time" id="shiftStartTime" name="shiftStartTime" min="00:00" max="12:00" required>                
-                </div>
-
-                <div class="row col-10 mx-auto mb-3">
-                    <label for="witnesses">name of witnesses (if any)?</label><br>
-                    <input type="text" id="witnesses" name="witnesses" required><br>
-                </div>
-
-                <div class="row col-10 mx-auto mb-3">
+                <div class="row col-11 col-lg-8 mx-auto mb-4 mt-lg-3">
                     <label for="incidentLocation">Where, exactly did it happen?</label><br>
                     <small>e.g., Room number</small><br>
                     <textarea id="incidentLocation" name="incidentLocation" rows="5" required></textarea>
                 </div>
 
-                <div class="row col-10 mx-auto mb-3">
+                <div class="row col-11 col-lg-8 mx-auto mb-4">
                     <label for="whatWereYouDoing">What were you doing at the time?</label><br>
                     <textarea id="whatWereYouDoing" name="whatWereYouDoing" rows="5" required></textarea>
                 </div>
 
-                <div class="row col-10 mx-auto mb-3">
+                <div class="row col-11 col-lg-8 mx-auto mb-4">
                     <label for="whatHappened">Describe step by step what led to the incident</label><br>
                     <small>(attach additional pages if necessary)</small><br>
                     <textarea id="whatHappened" name="whatHappened" rows="5" required></textarea>
                 </div>
 
-                <div class="row col-10 mx-auto mb-3">
+                <div class="row col-11 col-lg-8 mx-auto mb-4">
                     <label for="bodyPartInjured">what part(s) of your body were injured?</label><br>
                     <input type="text" id="bodyPartInjured" name="bodyPartInjured" required><br>
                 </div>
 
-                <div class="row col-12 mx-auto d-flex justify-content-center mb-3">
-                    <label for="wasTreated">did you get medical treatment?</label>
+                <div class="row col-12 col-md-9 col-lg-5 mx-auto d-flex justify-content-center mb-4">
+                    <label class="mb-3" for="wasTreated">did you get medical treatment?</label>
 
                     <div class="col-3">
                         <input type='radio' id='wasTreatedYes' name='wasTreated' value='yes' required>
@@ -125,23 +145,25 @@
                     </div>
                 </div>
 
-                <div class="row col-10 mx-auto mb-3">
-                    <label for="treatedBy">if yes, whom did you see?</label><br>
-                    <input type="text" id="treatedBy" name="treatedBy" required><br>
+                <div class="row col-lg-8 mx-auto">
+                    <div class="row col-11 col-lg-6 mx-auto mb-4">
+                        <label for="treatedBy">if yes, whom did you see?</label><br>
+                        <input type="text" id="treatedBy" name="treatedBy" required><br>
+                    </div>
+
+                    <div class="row col-11 col-lg-6 mx-auto mb-4">
+                        <label for="treatedByPhone">Doctor phone #</label><br>
+                        <input type="text" id="treatedByPhone" name="treatedByPhone" required><br>
+                    </div>
                 </div>
 
-                <div class="row col-10 mx-auto mb-3">
-                    <label for="treatedByPhone">Doctor phone #</label><br>
-                    <input type="text" id="treatedByPhone" name="treatedByPhone" required><br>
-                </div>
-
-                <div class="row col-10 mx-auto mb-3">
+                <div class="row col-11 col-lg-8 mx-auto mb-4">
                     <label for="placeOfTreatment">name/address of treatment facility</label><br>
                     <input type="text" id="placeOfTreatment" name="placeOfTreatment" required><br>
                 </div>
 
-                <div class="row col-12 mx-auto d-flex justify-content-center mb-3">
-                    <label for="injuredBefore">Has this part of your body been injured before?</label>
+                <div class="row col-12 col-md-9 col-lg-5 mx-auto d-flex justify-content-center mb-4">
+                    <label class="mb-3" for="injuredBefore">Has this part of your body been injured before?</label>
 
                     <div class="col-3">
                         <input type='radio' id='injuredBeforeYes' name='injuredBefore' value='yes' required>
@@ -154,23 +176,25 @@
                     </div>
                 </div>
 
-                <div class="row col-10 mx-auto mb-3">
+                <div class="row col-11 col-lg-8 mx-auto mb-4">
                     <label for="priorInjuryDescription">If yes, when & what happened?</label><br>
                     <textarea id="priorInjuryDescription" name="priorInjuryDescription" rows="5" required></textarea>
                 </div>
 
-                <div class="row col-10 mx-auto mb-3">
-                    <label for="signature">employee signature:</label><br>
-                    <small>(enter full name)</small>
-                    <input type="text" id="signature" name="signature" required><br>
+                <div class="row col-lg-8 mx-auto">
+                    <div class="row col-11 col-lg-6 mx-auto mb-4">
+                        <label for="signature">employee signature:</label><br>
+                        <small>(enter full name)</small>
+                        <input type="text" id="signature" name="signature" required><br>
+                    </div>
+
+                    <div class="row col-11 col-lg-6 mx-auto mb-4">
+                        <label for="todaysDate">date of incident</label><br>
+                        <input type="date" id="todaysDate" name="todaysDate" value="2000-07-22" min="2020-01-01" max="2050-12-31" required>
+                    </div>
                 </div>
 
-                <div class="row col-10 mx-auto mb-3">
-                    <label for="todaysDate">date of incident</label><br>
-                    <input type="date" id="todaysDate" name="todaysDate" value="2000-07-22" min="2020-01-01" max="2050-12-31" required>
-                </div>
-
-                <button type="submit" class="btn col-10 my-3">Submit</button>
+                <button type="submit" class="btn col-10 col-md-5 col-xl-3 my-3">Submit</button>
 
 
             </form>
