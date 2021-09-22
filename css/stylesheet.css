@@ -38,3 +38,7 @@ form .btn {
 form{
     background-color: #cbe9e3;
 }
+
+.validation-error{
+    color: red;
+}
