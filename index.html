@@ -40,17 +40,22 @@
         </header>
 
         <div class="my-5">
-            <form class="text-center mx-auto py-5 col-12 col-md-8 col-lg-8">
+            <form 
+                class="text-center mx-auto py-5 col-12 col-md-8 col-lg-8" 
+                id="incidentForm"
+                autocomplete="off"
+                action="https://formspree.io/f/mpzkbkay" method="POST"
+            >
                 <div class="row col-12 col-md-9 col-lg-5 mx-auto d-flex justify-content-center mb-4">
                     <label class="mb-3" for="incident-type">I am reporting a work related: </label>
 
                     <div class="col-3">
-                        <input type='radio' id='injury' name='incident-type' value='injury' required>
+                        <input type='radio' id='injuryIncident' name='incident-type' value='injury' required>
                         <label class="radio-label" for='injury'>injury</label>
                     </div>
 
                     <div class="col-3">
-                        <input type='radio' id='illness' name='incident-type' value='illness'>
+                        <input type='radio' id='illnessIncident' name='incident-type' value='illness'>
                         <label class="radio-label" for='illness'>illness</label>
                     </div>
                 </div>
@@ -60,7 +65,9 @@
                     <input class="col-12 col-sm-8 mx-auto" type="text" id="name" name="name" required>
                 </div>-->
 
+                <!--<div class="row col-lg-8 mx-auto">-->
                 <div class="row col-lg-8 mx-auto">
+
                     <div class="row col-11 col-lg-6 mx-auto mb-4">
                         <label for="name">your name:</label><br/>
                         <input type="text" id="name" name="name" required>
@@ -87,7 +94,7 @@
                 <div class="row col-lg-8 mx-auto">
                     <div class="row col-11 col-lg-6 mx-auto mb-4">
                         <label for="incidentDate">date of incident</label><br>
-                        <input type="date" id="incidentDate" name="incidentDate" value="2021-07-22" min="2020-01-01" max="2050-12-31" required>
+                        <input type="date" id="incidentDate" name="incidentDate" min="2020-01-01" max="2050-12-31" required>
                     </div>
     
                     <div class="row col-11 col-lg-6 mx-auto mb-4">
@@ -104,7 +111,7 @@
     
                     <div class="row col-11 col-lg-6 mx-auto mb-4">
                         <label for="witnesses">name of witnesses (if any)?</label><br>
-                        <input type="text" id="witnesses" name="witnesses" required><br>
+                        <input type="text" id="witnesses" name="witnesses"><br>
                     </div>
                 </div>
                 
@@ -189,12 +196,12 @@
                     </div>
 
                     <div class="row col-11 col-lg-6 mx-auto mb-4">
-                        <label for="todaysDate">date of incident</label><br>
-                        <input type="date" id="todaysDate" name="todaysDate" value="2000-07-22" min="2020-01-01" max="2050-12-31" required>
+                        <label for="todaysDate">date</label><br>
+                        <input type="date" id="todaysDate" name="todaysDate" min="2020-01-01" max="2050-12-31" required>
                     </div>
                 </div>
 
-                <button type="submit" class="btn col-10 col-md-5 col-xl-3 my-3">Submit</button>
+                <button type="submit" class="btn col-10 col-md-5 col-xl-3 my-3" id="submitButton">Submit</button>
 
 
             </form>
@@ -204,7 +211,12 @@
 
 
 
+        <script>
 
+            function handleSubmit(){
+                console.log('submit clicked');
+            }
+        </script>
 
         <!--<script src="node_modules/jquery/dist/jquery.js"></script>
         <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>-->
