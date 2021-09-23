@@ -36,6 +36,17 @@ function validate(){
         jobTitleLabel.classList.remove('validation-error');
     }
 
+    let recruiterName = document.getElementById('recruiterName');
+    let recruiterNameLabel = document.getElementById('recruiterNameLabel');
+
+    if (recruiterName.value == ""){
+        recruiterNameLabel.classList.add('validation-error');
+        recruiterNameLabel.focus();
+        return false;
+    }else{
+        recruiterNameLabel.classList.remove('validation-error');
+    }
+
     let supervisor = document.getElementById('supervisor');
     let supervisorLabel = document.getElementById('supervisorLabel');
 
@@ -58,26 +69,15 @@ function validate(){
         whoDidYouReportToLabel.classList.remove('validation-error');
     }
 
-    let incidentDate = document.getElementById('incidentDate');
-    let incidentDateLabel = document.getElementById('incidentDateLabel');
+    let incidentDateAndTime = document.getElementById('incidentDateAndTime');
+    let incidentDateAndTimeLabel = document.getElementById('incidentDateAndTimeLabel');
 
-    if (incidentDate.value == ""){
-        incidentDateLabel.classList.add('validation-error');
-        incidentDateLabel.focus();
+    if (incidentDateAndTime.value == ""){
+        incidentDateAndTimeLabel.classList.add('validation-error');
+        incidentDateAndTimeLabel.focus();
         return false;
     }else{
-        incidentDateLabel.classList.remove('validation-error');
-    }
-
-    let incidentTime = document.getElementById('incidentTime');
-    let incidentTimeLabel = document.getElementById('incidentTimeLabel');
-
-    if (incidentTime.value == ""){
-        incidentTimeLabel.classList.add('validation-error');
-        incidentTimeLabel.focus();
-        return false;
-    }else{
-        incidentTimeLabel.classList.remove('validation-error');
+        incidentDateAndTimeLabel.classList.remove('validation-error');
     }
 
     let shiftStartTime = document.getElementById('shiftStartTime');

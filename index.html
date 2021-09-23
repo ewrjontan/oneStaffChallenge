@@ -70,7 +70,6 @@
                 </div>
 
                 <div class="row col-lg-10 mx-auto">
-
                     <div class="row col-11 col-lg-5 mx-auto mb-4">
                         <label for="name" id="nameLabel">Your name: *</label><br/>
                         <input type="text" id="name" name="Name" placeholder="enter first and last name" required aria-required=”true”>
@@ -84,7 +83,6 @@
                 </div>
 
                 <div class="row col-lg-10 mx-auto">
-
                     <div class="row col-11 col-lg-5 mx-auto mb-4">
                         <label for="recruiterName" id="recruiterNameLabel">Recruiter name: *</label><br>
                         <input type="text" id="recruiterName" name="Recruiter Name" placeholder="enter recruiter name" required aria-required=”true”>
@@ -94,23 +92,17 @@
                         <label for="supervisor" id="supervisorLabel">Supervisor @ facility name: *</label><br>
                         <input type="text" id="supervisor" name="Supervisor" placeholder="enter supervisor and facility" required aria-required=”true”>
                     </div>
+                </div>
 
+                <div class="row col-lg-10 mx-auto">
                     <div class="row col-11 col-lg-5 mx-auto mb-4">
                         <label for="whoDidYouReportTo" id="whoDidYouReportToLabel">Who did you report it to? *</label><br>
                         <input type="text" id="whoDidYouReportTo" name="Who Did You Report To" placeholder="enter name" required aria-required=”true”><br>
                     </div>
-                </div>
-
-                <div class="row col-lg-10 mx-auto">
 
                     <div class="row col-11 col-lg-5 mx-auto mb-4">
-                        <label for="incidentDate" id="incidentDateLabel">Date of incident: *</label><br>
-                        <input type="date" id="incidentDate" name="Incident Date" min="2020-01-01" max="2099-12-31" required aria-required=”true”>
-                    </div>
-    
-                    <div class="row col-11 col-lg-5 mx-auto mb-4">
-                        <label for="incidentTime" id="incidentTimeLabel">Time of incident: *</label><br>
-                        <input type="time" id="incidentTime" name="Incident Time" min="00:00" max="24:00" required aria-required=”true”>                
+                        <label for="incidentDateAndTime" id="incidentDateAndTimeLabel">Date and time of incident: *</label><br>
+                        <input type="datetime-local" id="incidentDateAndTime" name="Incident Date and Time" min="2020-01-01T00:00" max="2099-12-31T00:00" required aria-required=”true”>
                     </div>
                 </div>
                 
