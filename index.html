@@ -48,10 +48,13 @@
             <form 
                 class="text-center mx-auto py-5 col-11 col-md-8 col-lg-6" 
                 id="incidentForm"
-                
                 autocomplete="off"
-                action="https://formspree.io/f/mpzkbkay" method="POST"
+                action="https://formspree.io/f/mpzkbkay" 
+                method="POST"
             >
+                <!-- sets subject line of e-mails -->
+                <input name="subject" value="New Incident Report" hidden readonly/>
+                
                 <div class="row col-12 col-md-9 col-lg-5 mx-auto d-flex justify-content-center mb-4">
                     <label class="mb-3" for="incident-type" id="incidentTypeLabel">I am reporting a work related: *</label>
                     
@@ -244,11 +247,11 @@
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="modalStatus">Success</h5>
+                  <h5 class="modal-title" id="modalStatus"></h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <p id="modalMessage">Your incident report has been received.</p>
+                  <p id="modalMessage"></p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn" data-bs-dismiss="modal">Ok</button>

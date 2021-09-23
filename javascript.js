@@ -1,19 +1,14 @@
 
 console.log('js working')
 
-
-
-let form = document.getElementById("incidentForm");
-
+//let form = document.getElementById("incidentForm");
 
 const submitButton = document.getElementById('submitButton');
 
 /*function validate(e){
     e.preventDefault();*/
 function validate(){
-
-
-    console.log('form submit clicked and validating');
+    console.log('validating');
 
     let injuryIncident = document.getElementById('injuryIncident');
     let illnessIncident = document.getElementById('illnessIncident');
@@ -256,27 +251,49 @@ function validate(){
 }
 
 
-//form.addEventListener("submit", handleSubmit);
-//submitButton.addEventListener('click', validate);
-submitButton.addEventListener('click', handleSubmit);
-
-
 function handleSubmit(e){
     console.log('submit clicekd');
     e.preventDefault();
 
-    let statusModal = new bootstrap.Modal(document.getElementById('statusModal'));
+    let isValid = validate();
 
-    validate() ? console.log('forms are valid') : console.log('forms are invalid'); 
+    if (isValid){
+        console.log('forms are valid')
+        
+        let form = document.getElementById("incidentForm");
 
+        let statusModal = new bootstrap.Modal(document.getElementById('statusModal'));
+        let modalStatus = document.getElementById('modalStatus');
+        let modalMessage = document.getElementById('modalMessage');
 
+        let formData = new FormData(form);
 
+        fetch(form.action, {
+            method: form.method,
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+          }).then(response => {
+            modalStatus.innerHTML = "Success";
+            modalMessage.innerHTML = "Your incident report has been received.";
+            statusModal.show()
+            form.reset();
+            
+          }).catch(error => {
+            modalStatus.innerHTML = "Uh oh!";
+            modalMessage.innerHTML = "Oops! Something went wrong. Please try again later.";
+            statusModal.show()
+          });
+        
+        
+        
+        
+    }else{
+        console.log('forms are invalid')    
+    }
 
-    //statusModal.show()
+    
 }
 
-/*form.addEventListener('submit', function (e) {
-    // prevent the form from submitting
-    e.preventDefault();
-    validate();
-});*/
+submitButton.addEventListener('click', handleSubmit);

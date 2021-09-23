@@ -39,7 +39,7 @@ form{
     color: red;
 }
 
-.btn{
+.btn, .modal-header{
     background-color: #4fc1b1;
     color: white;
 }
