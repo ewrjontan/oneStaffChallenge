@@ -6,14 +6,11 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         
-        <!-- build:css css/main.css -->
         <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
-        <!--<link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css"/>-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/stylesheet.css"/>
-        <!-- endbuild -->
     </head>
 
     <body>
@@ -37,7 +34,6 @@
                     <p><strong>timing: </strong> Employee completes the form during their work-shift (or within 24-hours of incident).</p>
 
                     <h6>all fields marked with * are required</h6>
-
                 </div>
                 
             </div>
@@ -66,7 +62,6 @@
                         <input type='radio' id='illnessIncident' name='Incident-type' value='illness'>
                         <label class="radio-label" for='illnessIncident'>Illness</label>
                     </div>
-
                 </div>
 
                 <div class="row col-lg-10 mx-auto">
@@ -79,7 +74,6 @@
                         <label for="jobTitle" id="jobTitleLabel">Job title: *</label><br>
                         <input type="text" id="jobTitle" name="Job Title" placeholder="enter job title" required aria-required=”true”>
                     </div>
-
                 </div>
 
                 <div class="row col-lg-10 mx-auto">
@@ -227,18 +221,17 @@
         </div>
 
         <!-- status modal -->
-        <div class="modal" id="statusModal" tabindex="-1">
+        <div class="modal fade" data-bs-backdrop="static" id="statusModal" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="modalStatus"></h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                   <p id="modalMessage"></p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn" data-bs-dismiss="modal">Ok</button>
+                  <button type="button" class="btn" id="modalCloseButton" data-bs-dismiss="modal">Ok</button>
                 </div>
               </div>
             </div>

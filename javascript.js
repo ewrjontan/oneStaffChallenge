@@ -1,5 +1,6 @@
 
 const submitButton = document.getElementById('submitButton');
+const modalCloseButton = document.getElementById('modalCloseButton');
 
 function validate(){
     let injuryIncident = document.getElementById('injuryIncident');
@@ -230,3 +231,12 @@ function handleSubmit(e){
 }
 
 submitButton.addEventListener('click', handleSubmit);
+
+//redirect to thanks.html upon closing of success modal
+modalCloseButton.addEventListener('click', () => {
+    window.top.location="thanks.html"
+});
+
+
+//window.top.location="yourlocation url"
+

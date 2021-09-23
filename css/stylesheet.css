@@ -9,7 +9,7 @@ html, body{
     color: #262626;
 }
 
-.instructions-container{
+.instructions-container, .thank-you-container{
     background-color:#4fc1b1;
 }
 
