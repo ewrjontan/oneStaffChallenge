@@ -8,25 +8,12 @@ let form = document.getElementById("incidentForm");
 
 const submitButton = document.getElementById('submitButton');
 
+/*function validate(e){
+    e.preventDefault();*/
+function validate(){
 
 
-function validate(e){
-    e.preventDefault();
-
-    //clear validation error messages
-    //document.getElementsByClassName('validation-error').innerHTML = '';
-
-
-    console.log('form submitted');
-    //console.log(form.elements);
-
-    //let inputs = form.elements;
-    
-
-    //validation
-    //get injury or illness
-
-    
+    console.log('form submit clicked and validating');
 
     let injuryIncident = document.getElementById('injuryIncident');
     let illnessIncident = document.getElementById('illnessIncident');
@@ -35,46 +22,36 @@ function validate(e){
     incidentTypeErrorMessage.innerHTML = '';
 
     if (injuryIncident.checked === false && illnessIncident.checked === false){
-        //incidentTypeErrorMessage.innerHTML = 'please select incident type';
-        //incidentTypeErrorMessage.focus();
         incidentTypeLabel.classList.add('validation-error');
-        incidentTypeLabel.focus();
-        //alert('Please select an incident type');
+        injuryIncident.focus();
         return false;
     }else{
         incidentTypeLabel.classList.remove('validation-error');
     }
 
     let name = document.getElementById('name');
-    let nameErrorMessage = document.getElementById('nameErrorMessage')
     let nameLabel = document.getElementById('nameLabel');
 
     console.log(`name: ${name.value}`);
 
     if (name.value == ""){
-        //nameErrorMessage.innerHTML = 'please enter your name';
         nameLabel.classList.add('validation-error');
         nameLabel.focus();
-        //alert('Please enter your name');
         return false;
     }else{
-        //nameErrorMessage.innerHTML = '';
         nameLabel.classList.remove('validation-error');
 
 
     }
 
     let jobTitle = document.getElementById('jobTitle');
-    let jobTitleErrorMessage = document.getElementById('jobTitleErrorMessage');
     let jobTitleLabel = document.getElementById('jobTitleLabel');
 
     console.log(`job title: ${jobTitle.value}`);
 
     if (jobTitle.value == ""){
-        //jobTitleErrorMessage.innerHTML = 'please enter your job title';
         jobTitleLabel.classList.add('validation-error');
         jobTitleLabel.focus();
-        //alert('Please enter your name');
         return false;
     }else{
         jobTitleLabel.classList.remove('validation-error');
@@ -87,10 +64,8 @@ function validate(e){
     console.log(`super visor: ${supervisor.value}`);
 
     if (supervisor.value == ""){
-        //jobTitleErrorMessage.innerHTML = 'please enter your job title';
         supervisorLabel.classList.add('validation-error');
         supervisorLabel.focus();
-        //alert('Please enter your name');
         return false;
     }else{
         supervisorLabel.classList.remove('validation-error');
@@ -103,15 +78,12 @@ function validate(e){
     console.log(`whoDidYouReportTo: ${whoDidYouReportTo.value}`);
     
     if (whoDidYouReportTo.value == ""){
-        //jobTitleErrorMessage.innerHTML = 'please enter your job title';
         whoDidYouReportToLabel.classList.add('validation-error');
         whoDidYouReportToLabel.focus();
-        //alert('Please enter your name');
         return false;
     }else{
         whoDidYouReportToLabel.classList.remove('validation-error');
     }
-
 
 
     let incidentDate = document.getElementById('incidentDate');
@@ -128,7 +100,6 @@ function validate(e){
     }
 
 
-
     let incidentTime = document.getElementById('incidentTime');
     let incidentTimeLabel = document.getElementById('incidentTimeLabel');
 
@@ -141,7 +112,6 @@ function validate(e){
     }else{
         incidentTimeLabel.classList.remove('validation-error');
     }
-
 
 
     let shiftStartTime = document.getElementById('shiftStartTime');
@@ -157,18 +127,17 @@ function validate(e){
         shiftStartTimeLabel.classList.remove('validation-error');
     }
 
-    /*let witnesses = document.getElementById('witnesses');
-    let witnessesLabel = document.getElementById('witnessesLabel');
+    let anyAssistanceYes = document.getElementById('anyAssistanceYes');
+    let anyAssistanceNo = document.getElementById('anyAssistanceNo');
+    let anyAssistanceLabel = document.getElementById('anyAssistanceLabel');
 
-    console.log(`witnesses: ${witnesses}`);
-
-    if (witnesses.value == ""){
-        witnessesLabel.classList.add('validation-error');
-        witnessesLabel.focus();
+    if (anyAssistanceYes.checked === false && anyAssistanceNo.checked === false){
+        anyAssistanceLabel.classList.add('validation-error');
+        anyAssistanceYes.focus();
         return false;
     }else{
-        witnessesLabel.classList.remove('validation-error');
-    }*/
+        anyAssistanceLabel.classList.remove('validation-error');
+    }
 
     let incidentLocation = document.getElementById('incidentLocation');
     let incidentLocationLabel = document.getElementById('incidentLocationLabel');
@@ -224,8 +193,6 @@ function validate(e){
     }
 
 
-
-
     let wasTreatedYes = document.getElementById('wasTreatedYes');
     console.log(`wasTreatedYes: ${wasTreatedYes.value}`);
 
@@ -235,26 +202,12 @@ function validate(e){
     let wasTreatedLabel = document.getElementById('wasTreatedLabel');
 
     if (wasTreatedYes.checked === false && wasTreatedNo.checked === false){
-        //incidentTypeErrorMessage.innerHTML = 'please select incident type';
-        //incidentTypeErrorMessage.focus();
         wasTreatedLabel.classList.add('validation-error');
-        wasTreatedLabel.focus();
-        //alert('Please select an incident type');
+        wasTreatedYes.focus();
         return false;
     }else{
         wasTreatedLabel.classList.remove('validation-error');
     }
-
-
-
-    /*let treatedBy = document.getElementById('treatedBy');
-    console.log(`treatedBy: ${treatedBy}`);
-
-    let treatedByPhone = document.getElementById('treatedByPhone');
-    console.log(`treatedByPhone: ${treatedByPhone}`);
-
-    let placeOfTreatment = document.getElementById('placeOfTreatment');
-    console.log(`placeOfTreatment: ${placeOfTreatment}`);*/
 
     let injuredBeforeYes = document.getElementById('injuredBeforeYes');
     console.log(`injuredBeforeYes: ${injuredBeforeYes}`);
@@ -265,20 +218,12 @@ function validate(e){
     let injuredBeforeLabel = document.getElementById('injuredBeforeLabel');
 
     if (injuredBeforeYes.checked === false && injuredBeforeNo.checked === false){
-        //incidentTypeErrorMessage.innerHTML = 'please select incident type';
-        //incidentTypeErrorMessage.focus();
         injuredBeforeLabel.classList.add('validation-error');
-        injuredBeforeLabel.focus();
-        //alert('Please select an incident type');
+        injuredBeforeYes.focus();
         return false;
     }else{
         injuredBeforeLabel.classList.remove('validation-error');
     }
-
-    /*
-    let priorInjuryDescription = document.getElementById('priorInjuryDescription');
-    console.log(`priorInjuryDescription: ${priorInjuryDescription}`);*/
-    
 
     let signature = document.getElementById('signature');
     let signatureLabel = document.getElementById('signatureLabel');
@@ -306,18 +251,32 @@ function validate(e){
         todaysDateLabel.classList.remove('validation-error');
     }
 
+    return true;
 
 }
 
 
 //form.addEventListener("submit", handleSubmit);
-submitButton.addEventListener('click', validate);
+//submitButton.addEventListener('click', validate);
+submitButton.addEventListener('click', handleSubmit);
 
 
-
-
-form.addEventListener('submit', function (e) {
-    // prevent the form from submitting
+function handleSubmit(e){
+    console.log('submit clicekd');
     e.preventDefault();
 
-});
+    let statusModal = new bootstrap.Modal(document.getElementById('statusModal'));
+
+    validate() ? console.log('forms are valid') : console.log('forms are invalid'); 
+
+
+
+
+    //statusModal.show()
+}
+
+/*form.addEventListener('submit', function (e) {
+    // prevent the form from submitting
+    e.preventDefault();
+    validate();
+});*/

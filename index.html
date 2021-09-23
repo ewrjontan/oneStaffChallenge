@@ -31,194 +31,231 @@
                     </div>
                 </div>
 
-                <div class="row instructions-container pt-3 text-center">
+                <div class="row instructions-container py-3 text-center">
                     <p><strong>instructions: </strong> Employees shall use this form to report work-related injuries or illnesses which could have caused an injury or illness - no matter how minor.</p>
     
                     <p><strong>timing: </strong> Employee completes the form during their work-shift (or within 24-hours of incident).</p>
+
+                    <h6>all fields marked with * are required</h6>
+
                 </div>
+                
             </div>
         </header>
 
         <div class="my-5">
+<!--onsubmit="handleSubmit()"-->
             <form 
-                class="text-center mx-auto py-5 col-12 col-md-8 col-lg-8" 
+                class="text-center mx-auto py-5 col-11 col-md-8 col-lg-6" 
                 id="incidentForm"
+                
                 autocomplete="off"
                 action="https://formspree.io/f/mpzkbkay" method="POST"
             >
                 <div class="row col-12 col-md-9 col-lg-5 mx-auto d-flex justify-content-center mb-4">
-                    <label class="mb-3" for="incident-type" id="incidentTypeLabel">I am reporting a work related: </label>
+                    <label class="mb-3" for="incident-type" id="incidentTypeLabel">I am reporting a work related: *</label>
                     
                     <small class="validation-error" id='incidentTypeErrorMessage'></small>
 
-                    <div class="col-3">
-                        <input type='radio' id='injuryIncident' name='incident-type' value='injury' required>
-                        <label class="radio-label" for='injury'>injury</label>
+                    <div class="col-4">
+                        <input type='radio' id='injuryIncident' name='Incident-type' value='injury' required aria-required=”true”>
+                        <label class="radio-label" for='injuryIncident'>injury</label>
                     </div>
 
-                    <div class="col-3">
-                        <input type='radio' id='illnessIncident' name='incident-type' value='illness'>
-                        <label class="radio-label" for='illness'>illness</label>
+                    <div class="col-4">
+                        <input type='radio' id='illnessIncident' name='Incident-type' value='illness'>
+                        <label class="radio-label" for='illnessIncident'>illness</label>
                     </div>
 
                 </div>
 
-                <div class="row col-lg-8 mx-auto">
+                <div class="row col-lg-10 mx-auto">
                     <small class="validation-error" id='nameErrorMessage'></small>
                     <small class="validation-error" id='jobTitleErrorMessage'></small>
 
                     <div class="row col-11 col-lg-6 mx-auto mb-4">
-                        <label for="name" id="nameLabel">your name:</label><br/>
-                        <input type="text" id="name" name="name" required>
+                        <label for="name" id="nameLabel">your name: *</label><br/>
+                        <input type="text" id="name" name="Name" placeholder="enter first and last name" required aria-required=”true”>
                     </div>
 
                     <div class="row col-11 col-lg-6 mx-auto mb-4">
-                        <label for="jobTitle" id="jobTitleLabel">job title:</label><br>
-                        <input type="text" id="jobTitle" name="jobTitle" required>
+                        <label for="jobTitle" id="jobTitleLabel">job title: *</label><br>
+                        <input type="text" id="jobTitle" name="Job Title" placeholder="enter job title" required aria-required=”true”>
                     </div>
 
                 </div>
 
-                <div class="row col-lg-8 mx-auto">
+                <div class="row col-lg-10 mx-auto">
                     <small class="validation-error" id='supervisorErrorMessage'></small>
                     <small class="validation-error" id='whoDidYouReportToErrorMessage'></small>
 
                     <div class="row col-11 col-lg-6 mx-auto mb-4">
-                        <label for="supervisor" id="supervisorLabel">supervisor @ facility name:</label><br>
-                        <input type="text" id="supervisor" name="supervisor" required>
+                        <label for="supervisor" id="supervisorLabel">supervisor @ facility name: *</label><br>
+                        <input type="text" id="supervisor" name="Supervisor" placeholder="enter supervisor and facility" required aria-required=”true”>
                     </div>
 
                     <div class="row col-11 col-lg-6 mx-auto mb-4">
-                        <label for="whoDidYouReportTo" id="whoDidYouReportToLabel">who did you report it to?</label><br>
-                        <input type="text" id="whoDidYouReportTo" name="whoDidYouReportTo" required><br>
+                        <label for="whoDidYouReportTo" id="whoDidYouReportToLabel">who did you report it to? *</label><br>
+                        <input type="text" id="whoDidYouReportTo" name="Who Did You Report To" placeholder="enter name" required aria-required=”true”><br>
                     </div>
                 </div>
 
-                <div class="row col-lg-8 mx-auto">
+                <div class="row col-lg-10 mx-auto">
                     <small class="validation-error" id='incidentDateErrorMessage'></small>
                     <small class="validation-error" id='incidentTimeErrorMessage'></small>
 
                     <div class="row col-11 col-lg-6 mx-auto mb-4">
-                        <label for="incidentDate" id="incidentDateLabel">date of incident</label><br>
-                        <input type="date" id="incidentDate" name="incidentDate" min="2020-01-01" max="2050-12-31" required>
+                        <label for="incidentDate" id="incidentDateLabel">date of incident *</label><br>
+                        <input type="date" id="incidentDate" name="Incident Date" min="2020-01-01" max="2099-12-31" required aria-required=”true”>
                     </div>
     
                     <div class="row col-11 col-lg-6 mx-auto mb-4">
-                        <label for="incidentTime" id="incidentTimeLabel">time of incident</label><br>
-                        <input type="time" id="incidentTime" name="incidentTime" min="00:00" max="12:00" required>                
+                        <label for="incidentTime" id="incidentTimeLabel">time of incident *</label><br>
+                        <input type="time" id="incidentTime" name="Incident Time" min="00:00" max="24:00" required aria-required=”true”>                
                     </div>
                 </div>
                 
-                <div class="row col-lg-8 mx-auto">
+                <div class="row col-lg-10 mx-auto">
                     <small class="validation-error" id='shiftStartTimeErrorMessage'></small>
                     <small class="validation-error" id='witnessesErrorMessage'></small>
 
                     <div class="row col-11 col-lg-6 mx-auto mb-4">
-                        <label for="shiftStartTime" id="shiftStartTimeLabel">time you started shift</label><br>
-                        <input type="time" id="shiftStartTime" name="shiftStartTime" min="00:00" max="12:00" required>                
+                        <label for="shiftStartTime" id="shiftStartTimeLabel">time you started shift *</label><br>
+                        <input type="time" id="shiftStartTime" name="Shift Start Time" min="00:00" max="24:00" required aria-required=”true”>                
                     </div>
     
                     <div class="row col-11 col-lg-6 mx-auto mb-4">
                         <label for="witnesses">name of witnesses (if any)?</label><br>
-                        <input type="text" id="witnesses" name="witnesses"><br>
+                        <input type="text" id="witnesses" name="Witnesses" placeholder="enter full name(s)"><br>
                     </div>
-                </div>
-                
-
-                <div class="row col-11 col-lg-8 mx-auto mb-4 mt-lg-3">
-                    <label for="incidentLocation" id="incidentLocationLabel">Where, exactly did it happen?</label><br>
-                    <small>e.g., Room number</small><br>
-                    <small class="validation-error" id='incidentLocationErrorMessage'></small>
-                    <textarea id="incidentLocation" name="incidentLocation" rows="5" required></textarea>
-                </div>
-
-                <div class="row col-11 col-lg-8 mx-auto mb-4">
-                    <label for="whatWereYouDoing" id="whatWereYouDoingLabel">What were you doing at the time?</label><br>
-                    <small class="validation-error" id='whatWereYouDoingErrorMessage'></small>
-                    <textarea id="whatWereYouDoing" name="whatWereYouDoing" rows="5" required></textarea>
-                </div>
-
-                <div class="row col-11 col-lg-8 mx-auto mb-4">
-                    <label for="whatHappened" id="whatHappenedLabel">Describe step by step what led to the incident</label><br>
-                    <small>(attach additional pages if necessary)</small><br>
-                    <small class="validation-error" id='whatHappenedErrorMessage'></small>
-                    <textarea id="whatHappened" name="whatHappened" rows="5" required></textarea>
-                </div>
-
-                <div class="row col-11 col-lg-8 mx-auto mb-4">
-                    <label for="bodyPartInjured" id="bodyPartInjuredLabel">what part(s) of your body were injured?</label><br>
-                    <input type="text" id="bodyPartInjured" name="bodyPartInjured" required><br>
                 </div>
 
                 <div class="row col-12 col-md-9 col-lg-5 mx-auto d-flex justify-content-center mb-4">
-                    <label class="mb-3" for="wasTreated" id="wasTreatedLabel">did you get medical treatment?</label>
+                    <label class="mb-3" for="anyAssistance" id="anyAssistanceLabel">was anyone assisting you at the time? *</label>
 
-                    <div class="col-3">
-                        <input type='radio' id='wasTreatedYes' name='wasTreated' value='yes' required>
+                    <div class="col-4">
+                        <input type='radio' id='anyAssistanceYes' name='Was Anyone Assisting' value='yes' required aria-required=”true”>
+                        <label class="radio-label" for='anyAssistanceYes'>yes</label>
+                    </div>
+
+                    <div class="col-4">
+                        <input type='radio' id='anyAssistanceNo' name='Was Anyone Assisting' value='no'>
+                        <label class="radio-label" for='anyAssistanceNo'>no</label>
+                    </div>
+                </div>
+
+                <div class="row col-11 col-lg-9 mx-auto mb-4">
+                    <label for="whoAssisting">if yes, whom was assisting?</label><br>
+                    <input type="text" id="whoAssisting" name="Who Was Assisting" placeholder="enter full name(s)"><br>
+                </div>
+                
+
+                <div class="row col-11 col-lg-9 mx-auto mb-4 mt-lg-3">
+                    <label for="incidentLocation" id="incidentLocationLabel">Where, exactly did it happen? *</label><br>
+                    <small class="validation-error" id='incidentLocationErrorMessage'></small>
+                    <textarea id="incidentLocation" name="Incident Location" rows="5" placeholder="e.g., room number" required aria-required=”true”></textarea>
+                </div>
+
+                <div class="row col-11 col-lg-9 mx-auto mb-4">
+                    <label for="whatWereYouDoing" id="whatWereYouDoingLabel">What were you doing at the time? *</label><br>
+                    <small class="validation-error" id='whatWereYouDoingErrorMessage'></small>
+                    <textarea id="whatWereYouDoing" name="What Were You Doing" rows="5" placeholder="e.g., checking blood pressure of patient" required></textarea>
+                </div>
+
+                <div class="row col-11 col-lg-9 mx-auto mb-4">
+                    <label for="whatHappened" id="whatHappenedLabel">Describe step by step what led to the incident: *</label><br>
+                    <small class="validation-error" id='whatHappenedErrorMessage'></small>
+                    <textarea id="whatHappened" name="What Happened" rows="5" placeholder="be specific and descriptive" required aria-required=”true”></textarea>
+                </div>
+
+                <div class="row col-11 col-lg-9 mx-auto mb-4">
+                    <label for="bodyPartInjured" id="bodyPartInjuredLabel">what part(s) of your body were injured? *</label><br>
+                    <input type="text" id="bodyPartInjured" name="Body Part Injured" placeholder="enter all body parts" required aria-required=”true”><br>
+                </div>
+
+                <div class="row col-12 col-md-9 col-lg-5 mx-auto d-flex justify-content-center mb-4">
+                    <label class="mb-3" for="wasTreated" id="wasTreatedLabel">did you get medical treatment? *</label>
+
+                    <div class="col-4">
+                        <input type='radio' id='wasTreatedYes' name='Was Treated' value='yes' required aria-required=”true”>
                         <label class="radio-label" for='wasTreatedYes'>yes</label>
                     </div>
 
-                    <div class="col-3">
-                        <input type='radio' id='wasTreatedNo' name='wasTreated' value='no'>
+                    <div class="col-4">
+                        <input type='radio' id='wasTreatedNo' name='Was Treated' value='no'>
                         <label class="radio-label" for='wasTreatedNo'>no</label>
                     </div>
                 </div>
 
-                <div class="row col-lg-8 mx-auto">
+                <div class="row col-lg-10 mx-auto">
                     <div class="row col-11 col-lg-6 mx-auto mb-4">
                         <label for="treatedBy">if yes, whom did you see?</label><br>
-                        <input type="text" id="treatedBy" name="treatedBy"><br>
+                        <input type="text" id="treatedBy" name="Treated By" placeholder="enter full name"><br>
                     </div>
 
                     <div class="row col-11 col-lg-6 mx-auto mb-4">
                         <label for="treatedByPhone">Doctor phone #</label><br>
-                        <input type="text" id="treatedByPhone" name="treatedByPhone"><br>
+                        <input type="tel" id="treatedByPhone" name="Treated By Phone" placeholder="enter phone number"><br>
                     </div>
                 </div>
 
-                <div class="row col-11 col-lg-8 mx-auto mb-4">
+                <div class="row col-11 col-lg-9 mx-auto mb-4">
                     <label for="placeOfTreatment">name/address of treatment facility</label><br>
-                    <input type="text" id="placeOfTreatment" name="placeOfTreatment"><br>
+                    <input type="text" id="placeOfTreatment" name="Place Of Treatment" placeholder="enter name and address"><br>
                 </div>
 
                 <div class="row col-12 col-md-9 col-lg-5 mx-auto d-flex justify-content-center mb-4">
-                    <label class="mb-3" for="injuredBefore" id="injuredBeforeLabel">Has this part of your body been injured before?</label>
+                    <label class="mb-3" for="injuredBefore" id="injuredBeforeLabel">Has this part of your body been injured before? *</label>
 
-                    <div class="col-3">
-                        <input type='radio' id='injuredBeforeYes' name='injuredBefore' value='yes' required>
+                    <div class="col-4">
+                        <input type='radio' id='injuredBeforeYes' name='Injured Before' value='yes' required aria-required=”true”>
                         <label class="radio-label" for='injuredBeforeYes'>yes</label>
                     </div>
 
-                    <div class="col-3">
-                        <input type='radio' id='injuredBeforeNo' name='injuredBefore' value='no'>
+                    <div class="col-4">
+                        <input type='radio' id='injuredBeforeNo' name='Injured Before' value='no'>
                         <label class="radio-label" for='injuredBeforeNo'>no</label>
                     </div>
                 </div>
 
-                <div class="row col-11 col-lg-8 mx-auto mb-4">
+                <div class="row col-11 col-lg-9 mx-auto mb-4">
                     <label for="priorInjuryDescription">If yes, when & what happened?</label><br>
-                    <textarea id="priorInjuryDescription" name="priorInjuryDescription" rows="5"></textarea>
+                    <textarea id="priorInjuryDescription" name="Prior Injury Description" placeholder="be specific and descriptive" rows="5"></textarea>
                 </div>
 
-                <div class="row col-lg-8 mx-auto">
+                <div class="row col-lg-10 mx-auto">
                     <div class="row col-11 col-lg-6 mx-auto mb-4">
-                        <label for="signature" id="signatureLabel">employee signature:</label><br>
-                        <small>(enter full name)</small>
-                        <input type="text" id="signature" name="signature" required><br>
+                        <label for="signature" id="signatureLabel">employee signature: *</label><br>
+                        <input type="text" id="signature" name="Signature" placeholder="enter full name" required aria-required=”true”><br>
                     </div>
 
                     <div class="row col-11 col-lg-6 mx-auto mb-4">
-                        <label for="todaysDate" id="todaysDateLabel">date</label><br>
-                        <input type="date" id="todaysDate" name="todaysDate" min="2020-01-01" max="2050-12-31" required>
+                        <label for="todaysDate" id="todaysDateLabel">date: *</label><br>
+                        <input type="date" id="todaysDate" name="Todays Date" min="2020-01-01" max="2099-12-31" required aria-required=”true”>
                     </div>
                 </div>
 
                 <button type="submit" class="btn col-10 col-md-5 col-xl-3 my-3" id="submitButton">Submit</button>
-
-
             </form>
         </div>
 
+        <!-- status modal -->
+        <div class="modal" id="statusModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalStatus">Success</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p id="modalMessage">Your incident report has been received.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn" data-bs-dismiss="modal">Ok</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
 
@@ -230,8 +267,8 @@
             }
         </script>
 
-        <!--<script src="node_modules/jquery/dist/jquery.js"></script>
-        <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>-->
+        <script src="node_modules/jquery/dist/jquery.js"></script>
+        <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
         <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="javascript.js"></script>
 
